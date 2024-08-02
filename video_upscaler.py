@@ -22,6 +22,6 @@ for i in range (1, 75):
 
     prompt = ""
 
-    upscaled_image = pipeline(prompt=prompt, image=low_res_img).images[0]
+    upscaled_image = pipeline(prompt=prompt, image=low_res_img, num_inference_steps=75).images[0]
     output = "./new1/highres/new1_" + str(i) + "_highres.png"
     upscaled_image.save(output)
