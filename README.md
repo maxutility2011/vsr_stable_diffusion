@@ -36,8 +36,9 @@ huggingface-cli login
 Enter your hugging face token when prompted.
 6. Run video_upscaler.py on your input low-resolution video (input file is to be hardcoded in the program)
 ```
-python video_upscaler.py
+python video_upscaler.py [base_url_prefix_of_your_input_images]
 ```
+[base_url_prefix_of_your_input_images] is the prefix of the base url to your input images, e.g., *https://bzhang-test-bucket-public.s3.amazonaws.com/new1_*.
 
 ## Convert image sequence to video
 ```

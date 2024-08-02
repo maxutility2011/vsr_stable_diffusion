@@ -1,4 +1,5 @@
 import requests
+import sys
 from PIL import Image
 from io import BytesIO
 from diffusers import StableDiffusionUpscalePipeline
@@ -9,8 +10,8 @@ model_id = "stabilityai/stable-diffusion-x4-upscaler"
 pipeline = StableDiffusionUpscalePipeline.from_pretrained(model_id)
 pipeline = pipeline.to("cuda")
 
-# let's download an image
-url_base = "https://bzhang-test-bucket-public.s3.amazonaws.com/new1_"
+# let's download an image from the base url given by the command line argument
+url_base = sys.argv[1]
 for i in range (1, 75):
     url = url_base + str(i) + ".png"
 
