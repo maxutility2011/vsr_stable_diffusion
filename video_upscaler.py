@@ -10,7 +10,7 @@ pipeline = StableDiffusionUpscalePipeline.from_pretrained(model_id)
 pipeline = pipeline.to("cuda")
 
 # let's download an image
-url_base = "https://bzhang-test-bucket-public.s3.amazonaws.com/old1_"
+url_base = "https://bzhang-test-bucket-public.s3.amazonaws.com/new1_"
 for i in range (1, 75):
     url = url_base + str(i) + ".png"
 
@@ -22,5 +22,5 @@ for i in range (1, 75):
     prompt = ""
 
     upscaled_image = pipeline(prompt=prompt, image=low_res_img).images[0]
-    output = "./old1/highres/old1_" + str(i) + "_highres.png"
+    output = "./new1/highres/new1_" + str(i) + "_highres.png"
     upscaled_image.save(output)
