@@ -10,7 +10,7 @@ model_id = "stabilityai/stable-diffusion-x4-upscaler"
 pipeline = StableDiffusionUpscalePipeline.from_pretrained(model_id)
 pipeline = pipeline.to("cuda")
 
-# let's download an image from the base url given by the command line argument
+# let's download the images from the base url given by the command line argument
 url_base = sys.argv[1]
 for i in range (1, 75):
     url = url_base + str(i) + ".png"
