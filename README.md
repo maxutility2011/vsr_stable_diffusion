@@ -8,7 +8,7 @@ mkdir images
 cd images/
 ffmpeg -i input.mov -vf fps=15 images/output_%4d.png
 ```
-Before running the above command, please make sure your input video does not have more than 9999 frames since *%4d* is used for naming the images, or you can use more digits to represent frame numbers.
+Before running the above command, please make sure your input video does not have more than 9999 frames since *%4d* is used for numbering the images, or you can use more digits to represent frame numbers.
 
 ## Upscale low-resolution images
 1. Get stable_diffusion source
@@ -42,5 +42,5 @@ python video_upscaler.py [base_url_prefix_of_your_input_images]
 
 ## Convert image sequence to video
 ```
-ffmpeg -r 15  -s 512x512 -i output_%2d.png -vcodec libx264 -crf 20 ../output_highres.mp4
+ffmpeg -r 15  -s 512x512 -i output_%4d.png -vcodec libx264 -crf 20 ../output_highres.mp4
 ```
